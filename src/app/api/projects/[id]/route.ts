@@ -1,13 +1,20 @@
 import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 
-export async function PUT(req: Request, { params }: { params: { id: string } }) {
+export async function PUT(req: Request, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   const data = await req.json()
-  const project = await prisma.project.update({ where: { id: Number(params.id) }, data })
-  return NextResponse.json(project)
+  const project = await prisma.project.update({ 
+    where: { id: Number(id) }, 
+    data 
+  });
+  return NextResponse.json(project);
 }
 
-export async function DELETE(_: Request, { params }: { params: { id: string } }) {
-  await prisma.project.delete({ where: { id: Number(params.id) } })
+export async function DELETE(req: Request, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  await prisma.project.delete({ 
+    where: { id: Number(id) } 
+  });
   return NextResponse.json({ success: true })
 }
