@@ -1,4 +1,4 @@
-// File: C:\Users\bmegh\Documents\GitHub\crudnextjs\crud-nextjs\src\app\(dashboard)\employees\[[...segments]]\page.tsx
+// File: C:\Users\bmegh\Documents\GitHub\crudnextjs\src\app\(dashboard)\employees\[[...segments]]\page.tsx
 import * as entry from '../../../../../../src/app/(dashboard)/employees/[[...segments]]/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

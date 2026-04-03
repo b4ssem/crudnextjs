@@ -1,4 +1,4 @@
-// File: C:\Users\bmegh\Documents\GitHub\crudnextjs\crud-nextjs\src\app\(dashboard)\layout.tsx
+// File: C:\Users\bmegh\Documents\GitHub\crudnextjs\src\app\(dashboard)\layout.tsx
 import * as entry from '../../../../src/app/(dashboard)/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
