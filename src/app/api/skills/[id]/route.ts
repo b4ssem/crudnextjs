@@ -3,6 +3,9 @@ import { prisma } from '@/lib/prisma'
 
 export async function PUT(req: Request, { params }: { params: { id: string } }) {
   const data = await req.json()
+  if (data.percentage) {
+    data.percentage = parseInt(data.percentage, 10)
+  }
   const skill = await prisma.skill.update({ where: { id: Number(params.id) }, data })
   return NextResponse.json(skill)
 }

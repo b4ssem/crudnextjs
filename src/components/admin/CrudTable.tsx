@@ -131,7 +131,10 @@ export default function CrudTable({ title, apiPath, columns, fields, emptyForm }
                 multiline={field.multiline}
                 rows={field.multiline ? 4 : 1}
                 value={form[field.name] || ''}
-                onChange={(e) => setForm({ ...form, [field.name]: e.target.value })}
+                onChange={(e) => setForm({ 
+                  ...form, 
+                  [field.name]: field.type === 'number' ? Number(e.target.value) : e.target.value 
+                })}
                 fullWidth
               />
             ))}

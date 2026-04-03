@@ -8,6 +8,9 @@ export async function GET() {
 
 export async function POST(req: Request) {
   const data = await req.json()
+  if (data.percentage) {
+    data.percentage = parseInt(data.percentage, 10)
+  }
   const skill = await prisma.skill.create({ data })
   return NextResponse.json(skill, { status: 201 })
 }
