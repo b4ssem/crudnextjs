@@ -2,9 +2,12 @@
   "name": "crud-nextjs",
   "version": "0.1.0",
   "scripts": {
-    "dev": "next dev",
-    "lint": "next lint"
-  },
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint",
+  "postinstall": "prisma generate" 
+},
   "dependencies": {
     "@auth/prisma-adapter": "^2.11.1",
     "@emotion/react": "^11",
