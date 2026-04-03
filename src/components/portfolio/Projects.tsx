@@ -16,7 +16,10 @@ export default function Projects({ projects }: { projects: Project[] }) {
         {projects.map((project) => (
           <div key={project.id} className="project-card">
             {project.imageUrl && (
-              <img src={project.imageUrl} alt={project.title} />
+              <>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={project.imageUrl} alt={project.title} />
+              </>
             )}
             <div className="project-card-text">
               <h3>{project.title}</h3>
