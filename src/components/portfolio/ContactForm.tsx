@@ -57,7 +57,7 @@ export default function ContactForm() {
               onChange={(e) => setForm({ ...form, message: e.target.value })}
               required
             />
-            {error && <p style={{ color: 'red' }}>Erreur lors de l'envoi.</p>}
+            {error && <p style={{ color: 'red' }}>Erreur lors de l&apos;envoi.</p>}
             <button type="submit" className="button button--flex">
               Envoyer <i className="bx bx-send"></i>
             </button>

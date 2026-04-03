@@ -7,6 +7,7 @@ export default function About({ about }: { about: About }) {
       <div className="about__container bd-grid">
         {about?.avatar && (
           <div className="about__img">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={about.avatar} alt="Photo de profil" />
           </div>
         )}
