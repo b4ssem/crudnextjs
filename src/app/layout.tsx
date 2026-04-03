@@ -1,41 +1,10 @@
-import * as React from 'react';
-import { NextAppProvider } from '@toolpad/core/nextjs';
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import PersonIcon from '@mui/icons-material/Person';
-import type { Navigation } from '@toolpad/core/AppProvider';
+import './globals.css'
+import 'boxicons/css/boxicons.min.css'  // pnpm add boxicons
 
-const NAVIGATION: Navigation = [
-  {
-    kind: 'header',
-    title: 'Main items',
-  },
-  {
-    title: 'Dashboard',
-    icon: <DashboardIcon />,
-  },
-  {
-    segment: 'employees',
-    title: 'Employees',
-    icon: <PersonIcon />,
-    pattern: 'employees{/:employeeId}*',
-  },
-];
-
-const BRANDING = {
-  title: 'My Toolpad Core Next.js App',
-};
-
-export default async function RootLayout(props: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-toolpad-color-scheme="light">
-      <body>
-        <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-          <NextAppProvider navigation={NAVIGATION} branding={BRANDING}>
-            {props.children}
-          </NextAppProvider>
-        </AppRouterCacheProvider>
-      </body>
+    <html lang="fr">
+      <body>{children}</body>
     </html>
-  );
+  )
 }
